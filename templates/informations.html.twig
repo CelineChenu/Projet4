@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% form_theme formInfo 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{ form_start(formInfo) }}
+    <h3>Tickets</h3>
+    <ul class="tickets">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for ticket in formInfo.tickets %}
+            {{ form_row(ticket.firstname) }}
+            {{ form_row(ticket.lastname) }}
+            {{ form_row(ticket.birthdate) }}
+            {{ form_row(ticket.country) }}
+            {{ form_row(ticket.dayticket) }}
+            {{ form_row(ticket.discountticket) }}
+        {% endfor %}
+    </ul>
+    {{ form_end(formInfo) }}
+{% endblock %}

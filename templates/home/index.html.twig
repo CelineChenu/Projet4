@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% form_theme formCommand 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}
+     {{ parent() }}
+{% endblock %}
+
+{% block body %}
+     {{ form_start(formCommand) }}
+     {{ form_row(formCommand.visitDay) }}
+     {{ form_row(formCommand.ticketNumber, {'attr': {'placeholder': "Nombre de tickets souhaités"}}) }}
+     {{ form_row(formCommand.email, {'attr': {'placeholder': "Adresse e-mail où les billets seront envoyés"}}) }}
+     <button type="submit" class="btn btn-success">Poursuivre</button>
+     {{ form_end(formCommand) }}
+{% endblock %}
