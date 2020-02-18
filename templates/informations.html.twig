@@ -6,18 +6,52 @@
 {% endblock %}
 
 {% block body %}
+    <div>
+        <h2>Informations du titulaire du ticket</h2>
+        <p> {{ "Les billets sont nominatifs, merci de fournir les informations demandées pour chaque titulaire." }}</p>
+    </div>
+    <div class="row" id="rangee">
+    <div id="colonne" class="col-sm-8">
     {{ form_start(formInfo) }}
-    <h3>Tickets</h3>
-    <ul class="tickets">
         {# iterate over each existing tag and render its only field: name #}
         {% for ticket in formInfo.tickets %}
-            {{ form_row(ticket.firstname) }}
-            {{ form_row(ticket.lastname) }}
-            {{ form_row(ticket.birthdate) }}
-            {{ form_row(ticket.country) }}
-            {{ form_row(ticket.dayticket) }}
-            {{ form_row(ticket.discountticket) }}
+        <div class="form-group">
+            <div class="form">
+            {{ form_row(ticket.firstname, {'label':'Prénom', 'attr': {'placeholder': "Prénom du titulaire du ticket"}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form">
+            {{ form_row(ticket.lastname, {'label':'Nom', 'attr': {'placeholder': "Nom du titulaire du ticket"}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form">
+            {{ form_row(ticket.birthdate, {'label':'Date de naissance'}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form">
+            {{ form_row(ticket.country, {'label':'Pays', 'attr': {'placeholder': "Pays du titulaire du ticket"}})}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form">
+            {{ form_row(ticket.dayticket, {'label':'Type de ticket'})}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form">
+            {{ form_row(ticket.discountticket, {'label':'Tarif réduit'})}}
+            </div>
+        </div>
         {% endfor %}
-    </ul>
+
+    <button type="submit" class="btn btn-success">Valider</button>
+    </div>
+    <div id="colonne" class="col-sm-4">
+        {{ include ('infos_pratiques.html.twig') }}
+    </div>
+    </div>
     {{ form_end(formInfo) }}
 {% endblock %}

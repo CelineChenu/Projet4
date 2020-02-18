@@ -7,10 +7,33 @@
 {% endblock %}
 
 {% block body %}
+     <div>
+          <h1>{{ "Billetterie du Musée du Louvre"}}</h1>
+          <h2>{{ "Achetez votre billet en ligne"}}</h2>
+     </div>
+     <div class="row" id="rangee">
+     <div id="colonne" class="col-sm-8">
      {{ form_start(formCommand) }}
-     {{ form_row(formCommand.visitDay) }}
-     {{ form_row(formCommand.ticketNumber, {'attr': {'placeholder': "Nombre de tickets souhaités"}}) }}
-     {{ form_row(formCommand.email, {'attr': {'placeholder': "Adresse e-mail où les billets seront envoyés"}}) }}
+     <div class="form-group">
+          <div id="datepicker" class="form">
+     {{ form_row(formCommand.visitDay,{'label':'Date'|trans, 'attr': {'placeholder': "Date de votre visite"}}) }}
+          </div>
+     </div>
+     <div class="form-group">
+          <div class="form">
+     {{ form_row(formCommand.ticketNumber, {'label':'Nombre de tickets'|trans, 'attr': {'placeholder': "Nombre de tickets souhaités"}}) }}
+          </div>
+     </div>
+     <div class="form-group">
+          <div class="form">
+     {{ form_row(formCommand.email, {'label':'Votre e-mail'|trans, 'attr': {'placeholder': "Adresse e-mail où les billets seront envoyés"}}) }}
+          </div>
+     </div>
      <button type="submit" class="btn btn-success">Poursuivre</button>
      {{ form_end(formCommand) }}
+     </div>
+          <div id="colonne" class="col-sm-4">
+               {{ include ('infos_pratiques.html.twig') }}
+          </div>
+     </div>
 {% endblock %}

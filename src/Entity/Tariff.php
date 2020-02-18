@@ -31,6 +31,16 @@ class Tariff
      */
     private $value;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $minVal;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $maxVal;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -66,6 +76,29 @@ class Tariff
     }
 
     public function setValue(float $value): self
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    public function getMinVal(): ?int
+    {
+        return $this->value;
+    }
+
+    public function setMinVal(int $value): self
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+    public function getMaxVal(): ?int
+    {
+        return $this->value;
+    }
+
+    public function setMaxVal(int $value): self
     {
         $this->value = $value;
 

@@ -47,16 +47,6 @@ class Ticket
     private $country;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tarr;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $tariffId;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $commandId;
@@ -140,30 +130,6 @@ class Ticket
     public function setCountry(string $country): self
     {
         $this->country = $country;
-
-        return $this;
-    }
-
-    public function getTarr(): ?string
-    {
-        return $this->tarr;
-    }
-
-    public function setTarr(string $tarr): self
-    {
-        $this->tarr = $tarr;
-
-        return $this;
-    }
-
-    public function getTariffId(): ?int
-    {
-        return $this->tariffId;
-    }
-
-    public function setTariffId(int $tariffId): self
-    {
-        $this->tariffId = $tariffId;
 
         return $this;
     }
