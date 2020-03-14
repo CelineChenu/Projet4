@@ -22,7 +22,7 @@ class TicketType extends AbstractType
         $builder->add('firstname');
         $builder->add('lastname');
         $builder->add('birthdate', BirthdayType::class, array(
-            'format' =>'ddMMyyyy',
+            'format' =>'dd/M/yyyy',
             'widget' => 'choice',
             'data' => new \DateTime($year.'-01-01')
         ));
@@ -33,7 +33,7 @@ class TicketType extends AbstractType
                 'Demi-journée (à partir de 14h)' => false,
             ),
             'attr' => array('class' => 'ticketType'),
-            'data' =>'true',
+            'data' =>'false',
 
 
         ));

@@ -40,7 +40,7 @@
                                     <td><div class="champ">{{ "Prénom"|trans}} : </div>{{ ticket.firstName }}</td>
                                     <td><div class="champ">{{ "Né(e) le"|trans}} </div>{{ ticket.birthDate|date('d/m/Y')}}</td>
                                     <td><div class="champ">{{ "Type de ticket"|trans}} : </div>{{ ticket.type }}</td>
-                                    <td><div class="champ">{{ "Tarif"|trans}} </div>{{ ticket.price}}</td>
+                                    <td><div class="champ">{{ "Prix"|trans}} </div>{{ ticket.price}}</td>
 
                                     <td id="right"><div class="champ">{{ "Montant"|trans}} : </div>{{ ticket.price }} €</td>
                                 </tr>
@@ -50,6 +50,32 @@
                     </table>
 
                     <p id="total">{{ "Montant total de votre commande :"|trans}} {{ command.total }} € TTC</p>
+
+                    <p>{{ "Veuillez prendre connaissance et accepter les conditions générales de vente avant de poursuivre."|trans }}</p>
+
+
+
+                    <form>
+                        <input type="checkbox" id="cgv" required><label>{{ "J'ai lu et j'accepte les "|trans }}<a href="https://www.ticketlouvre.fr/louvre/b2c/index.cfm/CGV" id="liencgv" target="_blank">{{ "conditions générales de vente."|trans }}</a></label>
+                    </form>
+
+
+                    <form action="{{ path('paiement') }}" method="POST">
+                        <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-amount="{{ command.total * 100 }}"
+                                data-key="{{ 'pk_test_dnJVwJevLE1FWm9uXMxIrjKI00fxL68lH8' }}"
+                                data-name="{{ "Billetterie du Louvre"|trans }}"
+                                data-description="{{ "Paiement"|trans }}"
+                                data-locale="auto"
+                                data-label="{{ "Paiement"|trans }}"
+                                data-customer="true"
+                                data-email="{{ command.email }}"
+                                data-allow-remember-me="false"
+                                data-currency="eur">
+                        </script>
+
+                    </form>
                 </div>
             </div>
 {% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div id="colonne" class="col-sm-12">
+
+        <div class="etape">
+            <h2>{{ "Validation de votre commmande"|trans }}</h2>
+        </div>
+
+            <div class="recap">
+                <p id="felicitations">{{ "Félicitations ! Votre commande est validée"|trans }}.</p>
+                <p>{{ "Vous recevrez prochainement votre/vos billet(s) à l'adresse mail : "|trans }} {{ command.email }}.</p>
+                <p>{{ "Votre numéro de commande est le : "|trans }} {{ command.code }}</p>
+
+                <div class="achat">
+
+                    <h3 id="detail">{{ "Détail de votre achat"|trans }}</h3>
+                    <p>{{ "Montant total de votre commande :"|trans }} {{ command.total }} euros</p>
+                    <p>{{ "Date de votre visite :"|trans }} {{ command.visitDay|date("d/m/yy") }}</p>
+                    <p>{{ "Nombre de billet(s) :"|trans }} {{ command.ticketNumber }}</p>
+                    <p>{{ "Bénéficiaire(s)"|trans }}<br />
+
+                        {% for ticket in command.tickets %}
+                    <hr />
+                    <p id="titreTicket">Ticket {{ loop.index }}</p>
+                    <p>{{ ticket.firstName }},
+                        {{ ticket.lastName }}</p>
+                    <p>{{ "Type de billet :"|trans }}{{ ticket.type }}</p>
+                        {{ "Prix :"|trans }} ({{ ticket.price }} euros)
+                        {% endfor %}
+                    </p>
+                </div>
+                <hr />
+
+                <a class="btn btn-success" href="{{ path('homepage') }}" role="button" id="boutonvalidation">{{ "Retour à la page d'accueil"|trans }}</a>
+            </div>
+
+    </div>
+{% endblock %}

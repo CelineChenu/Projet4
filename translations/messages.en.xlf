@@ -5,6 +5,10 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
+      <trans-unit id="n4bQgYh" resname="test">
+        <source>test</source>
+        <target>test en anglais</target>
+      </trans-unit>
       <trans-unit id="7wrgMk3" resname="Billetterie du Louvre">
         <source>Billetterie du Louvre</source>
         <target>__Billetterie du Louvre</target>
@@ -224,6 +228,94 @@
       <trans-unit id="CX2O5eq" resname="Montant total de votre commande :">
         <source>Montant total de votre commande :</source>
         <target>__Montant total de votre commande :</target>
+      </trans-unit>
+      <trans-unit id="P.vD2nH" resname="Commande validée">
+        <source>Commande validée</source>
+        <target>__Commande validée</target>
+      </trans-unit>
+      <trans-unit id="TFAC.iv" resname="Félicitations ! Votre commande a été enregistrée.">
+        <source>Félicitations ! Votre commande a été enregistrée.</source>
+        <target>__Félicitations ! Votre commande a été enregistrée.</target>
+      </trans-unit>
+      <trans-unit id="x4XDb2d" resname="Référence de votre commande :">
+        <source>Référence de votre commande :</source>
+        <target>__Référence de votre commande :</target>
+      </trans-unit>
+      <trans-unit id="Rnx1M9r" resname="Vous trouverez ci-dessous le récapitulatif de votre commande. Ce mail est votre billet électronique.">
+        <source>Vous trouverez ci-dessous le récapitulatif de votre commande. Ce mail est votre billet électronique.</source>
+        <target>__Vous trouverez ci-dessous le récapitulatif de votre commande. Ce mail est votre billet électronique.</target>
+      </trans-unit>
+      <trans-unit id="q3RqwLP" resname="Billet(s)">
+        <source>Billet(s)</source>
+        <target>__Billet(s)</target>
+      </trans-unit>
+      <trans-unit id="L3fo5rX" resname="Billet">
+        <source>Billet</source>
+        <target>__Billet</target>
+      </trans-unit>
+      <trans-unit id="DxVKM_c" resname="Bénéficiaire :">
+        <source>Bénéficiaire :</source>
+        <target>__Bénéficiaire :</target>
+      </trans-unit>
+      <trans-unit id="rrhVMjr" resname="Type de ticket :">
+        <source>Type de ticket :</source>
+        <target>__Type de ticket :</target>
+      </trans-unit>
+      <trans-unit id="35UfnYY" resname="Prix :">
+        <source>Prix :</source>
+        <target>__Prix :</target>
+      </trans-unit>
+      <trans-unit id="zr5rv5E" resname="Nous vous rappelons qu'un justificatif sera demandé au(x) bénéficiaire(s) du tarif réduit, à l'entrée du Musée.">
+        <source>Nous vous rappelons qu'un justificatif sera demandé au(x) bénéficiaire(s) du tarif réduit, à l'entrée du Musée.</source>
+        <target>__Nous vous rappelons qu'un justificatif sera demandé au(x) bénéficiaire(s) du tarif réduit, à l'entrée du Musée.</target>
+      </trans-unit>
+      <trans-unit id="VMMk9sE" resname="Prix">
+        <source>Prix</source>
+        <target>__Prix</target>
+      </trans-unit>
+      <trans-unit id="_SHAeR0" resname="Veuillez prendre connaissance et accepter les conditions générales de vente avant de poursuivre.">
+        <source>Veuillez prendre connaissance et accepter les conditions générales de vente avant de poursuivre.</source>
+        <target>__Veuillez prendre connaissance et accepter les conditions générales de vente avant de poursuivre.</target>
+      </trans-unit>
+      <trans-unit id="8V1zY4N" resname="J'ai lu et j'accepte les">
+        <source>J'ai lu et j'accepte les</source>
+        <target>__J'ai lu et j'accepte les</target>
+      </trans-unit>
+      <trans-unit id="9wRMHES" resname="conditions générales de vente.">
+        <source>conditions générales de vente.</source>
+        <target>__conditions générales de vente.</target>
+      </trans-unit>
+      <trans-unit id="XZ6eROG" resname="Paiement">
+        <source>Paiement</source>
+        <target>__Paiement</target>
+      </trans-unit>
+      <trans-unit id="glrDawj" resname="Validation de votre commmande">
+        <source>Validation de votre commmande</source>
+        <target>__Validation de votre commmande</target>
+      </trans-unit>
+      <trans-unit id="Qyt5zDI" resname="Félicitations ! Votre commande est validée">
+        <source>Félicitations ! Votre commande est validée</source>
+        <target>__Félicitations ! Votre commande est validée</target>
+      </trans-unit>
+      <trans-unit id="YmqKN68" resname="Vous recevrez prochainement votre/vos billet(s) à l'adresse mail :">
+        <source>Vous recevrez prochainement votre/vos billet(s) à l'adresse mail :</source>
+        <target>__Vous recevrez prochainement votre/vos billet(s) à l'adresse mail :</target>
+      </trans-unit>
+      <trans-unit id="eV5pPFC" resname="Votre numéro de commande est le :">
+        <source>Votre numéro de commande est le :</source>
+        <target>__Votre numéro de commande est le :</target>
+      </trans-unit>
+      <trans-unit id="mW_roKu" resname="Détail de votre achat">
+        <source>Détail de votre achat</source>
+        <target>__Détail de votre achat</target>
+      </trans-unit>
+      <trans-unit id="BjKVIW_" resname="Type de billet :">
+        <source>Type de billet :</source>
+        <target>__Type de billet :</target>
+      </trans-unit>
+      <trans-unit id="A0kfbRi" resname="Retour à la page d'accueil">
+        <source>Retour à la page d'accueil</source>
+        <target>__Retour à la page d'accueil</target>
       </trans-unit>
     </body>
   </file>

@@ -84,23 +84,23 @@ class Tariff
 
     public function getMinVal(): ?int
     {
-        return $this->value;
+        return $this->minVal;
     }
 
-    public function setMinVal(int $value): self
+    public function setMinVal(int $minVal): self
     {
-        $this->value = $value;
+        $this->minVal = $minVal;
 
         return $this;
     }
     public function getMaxVal(): ?int
     {
-        return $this->value;
+        return $this->maxVal;
     }
 
     public function setMaxVal(int $value): self
     {
-        $this->value = $value;
+        $this->maxVal = $value;
 
         return $this;
     }

@@ -8,28 +8,28 @@
 
 {% block body %}
      <div>
-          <h1>{{ "Billetterie du Musée du Louvre"}}</h1>
-          <h2>{{ "Achetez votre billet en ligne"}}</h2>
+          <h1>{{ "Billetterie du Musée du Louvre"|trans}}</h1>
+          <h2>{{ "Achetez votre billet en ligne"|trans}}</h2>
      </div>
      <div class="row" id="rangee">
      <div id="colonne" class="col-sm-8">
      {{ form_start(formCommand) }}
      <div class="form-group">
           <div id="datepicker" class="form">
-     {{ form_row(formCommand.visitDay,{'label':'Date'|trans, 'attr': {'placeholder': "Date de votre visite"}}) }}
+     {{ form_row(formCommand.visitDay,{'label':'Date'|trans, 'attr': {'placeholder': "Date de votre visite"|trans}}) }}
           </div>
      </div>
      <div class="form-group">
           <div class="form">
-     {{ form_row(formCommand.ticketNumber, {'label':'Nombre de tickets'|trans, 'attr': {'placeholder': "Nombre de tickets souhaités"}}) }}
+     {{ form_row(formCommand.ticketNumber, {'label':'Nombre de tickets'|trans, 'attr': {'placeholder': "Nombre de tickets souhaités"|trans}}) }}
           </div>
      </div>
      <div class="form-group">
           <div class="form">
-     {{ form_row(formCommand.email, {'label':'Votre e-mail'|trans, 'attr': {'placeholder': "Adresse e-mail où les billets seront envoyés"}}) }}
+     {{ form_row(formCommand.email, {'label':'Votre e-mail'|trans, 'attr': {'placeholder': "Adresse e-mail où les billets seront envoyés"|trans}}) }}
           </div>
      </div>
-     <button type="submit" class="btn btn-success">Poursuivre</button>
+     <button type="submit" class="btn btn-success">{{"Poursuivre"|trans  }}</button>
      {{ form_end(formCommand) }}
      </div>
           <div id="colonne" class="col-sm-4">

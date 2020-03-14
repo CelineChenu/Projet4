@@ -10,12 +10,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-        <script src='datepicker-fr.js' type='text/javascript'></script>
+        <script src="{{ asset('js/datepicker.js') }}"></script>
+        <script src="{{ asset('js/code.js') }}"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Billetterie du Louvre</a>
+            <a class="navbar-brand" href="/">{{ "Billetterie du Louvre"|trans }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,10 +26,17 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">{{ "Accueil"|trans }} <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Langues</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ "Langues"|trans }}</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                            <a class="dropdown-item" lang="en" href="{{ path('changelang_en') }}">{{ "English"|trans }}</a>
+                            <a class="dropdown-item" lang="fr" href="{{ path('changelang_fr') }}">{{ "Français"|trans }}</a>
+
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -39,9 +49,9 @@
         <div class="container">
         {% block footer %}
             <footer id="footer">
-                <p>Copyright © 2020 Musée du Louvre | {{ "Tous droits réservés"}} <br />
-                    <a href="http://www.louvre.fr/" target="_blank">{{ "Accueil" }}</a> |
-                    <a href="https://www.ticketlouvre.fr/louvre/b2c/index.cfm/CGV" target="_blank">{{ "Conditions générales de vente"}}</a>
+                <p>{{ "Copyright © 2020 Musée du Louvre"|trans }} | {{ "Tous droits réservés"|trans}} <br />
+                    <a href="http://www.louvre.fr/" target="_blank">{{ "Accueil"|trans }}</a> |
+                    <a href="https://www.ticketlouvre.fr/louvre/b2c/index.cfm/CGV" target="_blank">{{ "Conditions générales de vente"|trans}}</a>
                 </p>
             </footer>
 
@@ -55,11 +65,35 @@
                         dateFormat: "dd/mm/yy",
                         startDate: '0d',
                         minDate: '0',
+                        beforeShowDay: function(date) {
+                            var d = date.getDay();
+                            var curDate = date.getDate();
+                            var m = date.getMonth();
+
+                            if (d == 0  || d == 2)
+                            {
+                                return [false] ;
+                            }
+
+                            else if (curDate == 1 && (m == 4 || m == 10))
+                            {
+                                return [false];
+                            }
+
+                            else if (curDate == 25 && m == 11){
+                                return [false];
+                            }
+                            else
+                            {
+                                return [true] ;
+                            }
+                        }
                     });
+
                 });
-
             </script>
-
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         {% endblock %}
     </body>
 </html>

@@ -31,10 +31,10 @@ class Command
     /**
      * @ORM\Column(type="float")
      */
-    private $price;
+    private $total;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Ticket", mappedBy="command", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Ticket", mappedBy="command", orphanRemoval=true, cascade={"persist","remove"})
      */
     private $tickets;
 
@@ -42,6 +42,11 @@ class Command
      * @ORM\Column(type="integer")
      */
     private $ticketNumber;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $code;
 
     public function __construct()
     {
@@ -77,14 +82,14 @@ class Command
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getTotal(): ?float
     {
-        return $this->price;
+        return $this->total;
     }
 
-    public function setPrice(float $price): self
+    public function setTotal(float $total): self
     {
-        $this->price = $price;
+        $this->total = $total;
 
         return $this;
     }
@@ -128,6 +133,18 @@ class Command
     public function setTicketNumber(int $ticketNumber): self
     {
         $this->ticketNumber = $ticketNumber;
+
+        return $this;
+    }
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(string $code): self
+    {
+        $this->code = $code;
 
         return $this;
     }

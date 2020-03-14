@@ -57,6 +57,16 @@ class Ticket
      */
     private $command;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -115,7 +125,7 @@ class Ticket
         return $this->birthDate;
     }
 
-    public function setBirthDate(\DateTimeInterface $birthDate): self
+    public function setBirthDate(\DateTimeInterface $birthDate = null): self
     {
         $this->birthDate = $birthDate;
 
@@ -154,6 +164,30 @@ class Ticket
     public function setCommand(?Command $command): self
     {
         $this->command = $command;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }
