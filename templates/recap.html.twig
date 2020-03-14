@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h2>{{ "Récapitulatif de votre commande"|trans}}</h2>
+
+            <div class="fondblanc">
+
+                <div class="commande">
+                    <p>{{ "Date de votre visite :"|trans}} {{ command.visitDay|date('d/m/Y')}}</p>
+                    <p id="email">{{ "Email où vos billets seront envoyés :"|trans}} {{ command.email }}</p>
+                    <p>{{ "Nombre de billet(s) :"|trans}} {{ command.ticketNumber }}</p>
+                </div>
+
+                <h3 id="beneficiaires">{{ "Bénéficiaire(s)"|trans}}</h3>
+
+                <div class="table-responsive" id="recap">
+                    <table class="table recap">
+                        <thead>
+                            <tr>
+                                <th id="center">Ticket</th>
+                                <th>{{ "Nom"|trans}}</th>
+                                <th>{{ "Prénom"|trans}}</th>
+                                <th>{{ "Date de naissance"|trans}}</th>
+                                <th>{{ "Type de ticket"|trans}}</th>
+                                <th>{{ "Tarif"|trans}}</th>
+                                <th id="center">{{ "Prix du billet"|trans}}</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for ticket in command.tickets %}
+                                <tr>
+                                    <td id="center">Ticket {{ loop.index }}</td>
+                                    <td><div class="champ"> {{ "Nom"|trans}} : </div>{{ ticket.lastName }}</td>
+                                    <td><div class="champ">{{ "Prénom"|trans}} : </div>{{ ticket.firstName }}</td>
+                                    <td><div class="champ">{{ "Né(e) le"|trans}} </div>{{ ticket.birthDate|date('d/m/Y')}}</td>
+                                    <td><div class="champ">{{ "Type de ticket"|trans}} : </div>{{ ticket.type }}</td>
+                                    <td><div class="champ">{{ "Tarif"|trans}} </div>{{ ticket.price}}</td>
+
+                                    <td id="right"><div class="champ">{{ "Montant"|trans}} : </div>{{ ticket.price }} €</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+
+                    <p id="total">{{ "Montant total de votre commande :"|trans}} {{ command.total }} € TTC</p>
+                </div>
+            </div>
+{% endblock %}

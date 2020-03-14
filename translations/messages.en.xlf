@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="7wrgMk3" resname="Billetterie du Louvre">
+        <source>Billetterie du Louvre</source>
+        <target>__Billetterie du Louvre</target>
+      </trans-unit>
+      <trans-unit id="UzFhc1Y" resname="Accueil">
+        <source>Accueil</source>
+        <target>__Accueil</target>
+      </trans-unit>
+      <trans-unit id="LSWfCb9" resname="Langues">
+        <source>Langues</source>
+        <target>Languages</target>
+      </trans-unit>
+      <trans-unit id="uhGL9.y" resname="English">
+        <source>English</source>
+        <target>English</target>
+      </trans-unit>
+      <trans-unit id="5JXVO5Z" resname="Français">
+        <source>Français</source>
+        <target>French</target>
+      </trans-unit>
+      <trans-unit id="0vR40Z6" resname="Copyright © 2020 Musée du Louvre">
+        <source>Copyright © 2020 Musée du Louvre</source>
+        <target>Copyright © 2020 Louvre Museum</target>
+      </trans-unit>
+      <trans-unit id="kKrC340" resname="Tous droits réservés">
+        <source>Tous droits réservés</source>
+        <target>__Tous droits réservés</target>
+      </trans-unit>
+      <trans-unit id="TNi04qb" resname="Conditions générales de vente">
+        <source>Conditions générales de vente</source>
+        <target>__Conditions générales de vente</target>
+      </trans-unit>
+      <trans-unit id="IBSzcDp" resname="Billetterie du Musée du Louvre">
+        <source>Billetterie du Musée du Louvre</source>
+        <target>__Billetterie du Musée du Louvre</target>
+      </trans-unit>
+      <trans-unit id="Q.uxTya" resname="Achetez votre billet en ligne">
+        <source>Achetez votre billet en ligne</source>
+        <target>Buy your ticket online</target>
+      </trans-unit>
+      <trans-unit id="mcQKtAW" resname="Date">
+        <source>Date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="_2AEu9g" resname="Date de votre visite">
+        <source>Date de votre visite</source>
+        <target>Date visit</target>
+      </trans-unit>
+      <trans-unit id=".B3vtLu" resname="Nombre de tickets">
+        <source>Nombre de tickets</source>
+        <target>Tickets number</target>
+      </trans-unit>
+      <trans-unit id="LDiWrG7" resname="Nombre de tickets souhaités">
+        <source>Nombre de tickets souhaités</source>
+        <target>__Nombre de tickets souhaités</target>
+      </trans-unit>
+      <trans-unit id="F7OR3ea" resname="Votre e-mail">
+        <source>Votre e-mail</source>
+        <target>__Votre e-mail</target>
+      </trans-unit>
+      <trans-unit id="czcSJMn" resname="Adresse e-mail où les billets seront envoyés">
+        <source>Adresse e-mail où les billets seront envoyés</source>
+        <target>__Adresse e-mail où les billets seront envoyés</target>
+      </trans-unit>
+      <trans-unit id="RjzYBqX" resname="Poursuivre">
+        <source>Poursuivre</source>
+        <target>__Poursuivre</target>
+      </trans-unit>
+      <trans-unit id="faRdsbA" resname="Informations du titulaire du ticket">
+        <source>Informations du titulaire du ticket</source>
+        <target>__Informations du titulaire du ticket</target>
+      </trans-unit>
+      <trans-unit id="aJgwkSw" resname="Les billets sont nominatifs, merci de fournir les informations demandées pour chaque titulaire.">
+        <source>Les billets sont nominatifs, merci de fournir les informations demandées pour chaque titulaire.</source>
+        <target>__Les billets sont nominatifs, merci de fournir les informations demandées pour chaque titulaire.</target>
+      </trans-unit>
+      <trans-unit id="4yW.j5A" resname="Prénom">
+        <source>Prénom</source>
+        <target>__Prénom</target>
+      </trans-unit>
+      <trans-unit id="lig1xH4" resname="Prénom du titulaire du ticket">
+        <source>Prénom du titulaire du ticket</source>
+        <target>__Prénom du titulaire du ticket</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>__Nom</target>
+      </trans-unit>
+      <trans-unit id="7LYoX2K" resname="Nom du titulaire du ticket">
+        <source>Nom du titulaire du ticket</source>
+        <target>__Nom du titulaire du ticket</target>
+      </trans-unit>
+      <trans-unit id="Rkn0tV4" resname="Date de naissance">
+        <source>Date de naissance</source>
+        <target>__Date de naissance</target>
+      </trans-unit>
+      <trans-unit id=".nU._5u" resname="Pays">
+        <source>Pays</source>
+        <target>__Pays</target>
+      </trans-unit>
+      <trans-unit id="1cDjKip" resname="Pays du titulaire du ticket">
+        <source>Pays du titulaire du ticket</source>
+        <target>__Pays du titulaire du ticket</target>
+      </trans-unit>
+      <trans-unit id="c6BJDwA" resname="Type de ticket">
+        <source>Type de ticket</source>
+        <target>__Type de ticket</target>
+      </trans-unit>
+      <trans-unit id="ZPa3.tK" resname="Tarif réduit">
+        <source>Tarif réduit</source>
+        <target>__Tarif réduit</target>
+      </trans-unit>
+      <trans-unit id="YmunqJ." resname="Valider">
+        <source>Valider</source>
+        <target>__Valider</target>
+      </trans-unit>
+      <trans-unit id="xnVBmg." resname="Informations pratiques">
+        <source>Informations pratiques</source>
+        <target>__Informations pratiques</target>
+      </trans-unit>
+      <trans-unit id="doG26i5" resname="Informations générales">
+        <source>Informations générales</source>
+        <target>__Informations générales</target>
+      </trans-unit>
+      <trans-unit id="GelRjil" resname="Les billets achetés sont nominatifs et uniquement valable le jour sélectionné.">
+        <source>Les billets achetés sont nominatifs et uniquement valable le jour sélectionné.</source>
+        <target>__Les billets achetés sont nominatifs et uniquement valable le jour sélectionné.</target>
+      </trans-unit>
+      <trans-unit id="8VNhfTc" resname="Les billet sont disponibles à la journée ou à la demi-journée, dans ce cas le musée est accessible à partir de 14 h.">
+        <source>Les billet sont disponibles à la journée ou à la demi-journée, dans ce cas le musée est accessible à partir de 14 h.</source>
+        <target>__Les billet sont disponibles à la journée ou à la demi-journée, dans ce cas le musée est accessible à partir de 14 h.</target>
+      </trans-unit>
+      <trans-unit id="1M7dgUA" resname="Horaires">
+        <source>Horaires</source>
+        <target>__Horaires</target>
+      </trans-unit>
+      <trans-unit id="jdjLT8M" resname="Le musée est ouvert sans interruption de 9h à 18h.">
+        <source>Le musée est ouvert sans interruption de 9h à 18h.</source>
+        <target>__Le musée est ouvert sans interruption de 9h à 18h.</target>
+      </trans-unit>
+      <trans-unit id="unHXVg9" resname="Fermeture">
+        <source>Fermeture</source>
+        <target>__Fermeture</target>
+      </trans-unit>
+      <trans-unit id="ViyHiH6" resname="Le musée est fermé tous les mardis, ainsi que les 1er mai, 1er novembre et 25 décembre.">
+        <source>Le musée est fermé tous les mardis, ainsi que les 1er mai, 1er novembre et 25 décembre.</source>
+        <target>__Le musée est fermé tous les mardis, ainsi que les 1er mai, 1er novembre et 25 décembre.</target>
+      </trans-unit>
+      <trans-unit id="_zCujCh" resname="Tarifs">
+        <source>Tarifs</source>
+        <target>__Tarifs</target>
+      </trans-unit>
+      <trans-unit id="iefWGTR" resname="Tarif normal (plus de 12 ans) : 16 euros">
+        <source>Tarif normal (plus de 12 ans) : 16 euros</source>
+        <target>__Tarif normal (plus de 12 ans) : 16 euros</target>
+      </trans-unit>
+      <trans-unit id="t3TQnR8" resname="Tarif enfant :">
+        <source>Tarif enfant :</source>
+        <target>__Tarif enfant :</target>
+      </trans-unit>
+      <trans-unit id="0axTDMJ" resname="De 4 à 11 ans : 8 euros">
+        <source>De 4 à 11 ans : 8 euros</source>
+        <target>__De 4 à 11 ans : 8 euros</target>
+      </trans-unit>
+      <trans-unit id="Cu3hLxU" resname="Moins de 4 ans : gratuit">
+        <source>Moins de 4 ans : gratuit</source>
+        <target>__Moins de 4 ans : gratuit</target>
+      </trans-unit>
+      <trans-unit id="Mb3v7zM" resname="Tarif senior (plus de 60 ans) : 12 euros">
+        <source>Tarif senior (plus de 60 ans) : 12 euros</source>
+        <target>__Tarif senior (plus de 60 ans) : 12 euros</target>
+      </trans-unit>
+      <trans-unit id="h_13acJ" resname="Tarif réduit : 10 euros">
+        <source>Tarif réduit : 10 euros</source>
+        <target>__Tarif réduit : 10 euros</target>
+      </trans-unit>
+      <trans-unit id="zUWPsZS" resname="(accordé sous certaines conditions : étudiant, employé de musée, d'un service du Ministère de la culture, militaire... Un justificatif vous sera demandé à l'entrée du musée)">
+        <source>(accordé sous certaines conditions : étudiant, employé de musée, d'un service du Ministère de la culture, militaire... Un justificatif vous sera demandé à l'entrée du musée)</source>
+        <target>__(accordé sous certaines conditions : étudiant, employé de musée, d'un service du Ministère de la culture, militaire... Un justificatif vous sera demandé à l'entrée du musée)</target>
+      </trans-unit>
+      <trans-unit id="omVGyDZ" resname="Récapitulatif de votre commande">
+        <source>Récapitulatif de votre commande</source>
+        <target>__Récapitulatif de votre commande</target>
+      </trans-unit>
+      <trans-unit id="zbcJ3li" resname="Date de votre visite :">
+        <source>Date de votre visite :</source>
+        <target>__Date de votre visite :</target>
+      </trans-unit>
+      <trans-unit id="BL.LvO0" resname="Email où vos billets seront envoyés :">
+        <source>Email où vos billets seront envoyés :</source>
+        <target>__Email où vos billets seront envoyés :</target>
+      </trans-unit>
+      <trans-unit id="xaVXwKA" resname="Nombre de billet(s) :">
+        <source>Nombre de billet(s) :</source>
+        <target>__Nombre de billet(s) :</target>
+      </trans-unit>
+      <trans-unit id="qayWb9B" resname="Bénéficiaire(s)">
+        <source>Bénéficiaire(s)</source>
+        <target>__Bénéficiaire(s)</target>
+      </trans-unit>
+      <trans-unit id="CdI6LwI" resname="Tarif">
+        <source>Tarif</source>
+        <target>__Tarif</target>
+      </trans-unit>
+      <trans-unit id="UI7sFBF" resname="Prix du billet">
+        <source>Prix du billet</source>
+        <target>__Prix du billet</target>
+      </trans-unit>
+      <trans-unit id="87J0GBt" resname="Né(e) le">
+        <source>Né(e) le</source>
+        <target>__Né(e) le</target>
+      </trans-unit>
+      <trans-unit id="lHzAfis" resname="Montant">
+        <source>Montant</source>
+        <target>__Montant</target>
+      </trans-unit>
+      <trans-unit id="CX2O5eq" resname="Montant total de votre commande :">
+        <source>Montant total de votre commande :</source>
+        <target>__Montant total de votre commande :</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
