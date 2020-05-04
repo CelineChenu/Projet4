@@ -37,7 +37,7 @@
             <p style="background-color:grey; padding: 10px; font-weight: 700; color:white; margin-bottom:-5px;">{{ "Billet"|trans}} {{ loop.index }}</p>
             <div class="ticketmail" style="background-color: lightgrey; padding: 10px;">
                 <p>{{ "Bénéficiaire :"|trans}} {{ ticket.firstName }} {{ ticket.lastName }}<br />
-                    {{ "Type de ticket :"|trans}} {{ ticket.type}}<br />
+                    {{ "Type de ticket :"|trans}} {{ ticket.type|trans}}<br />
                     {{ "Prix :"|trans}} {{ticket.price}} euros</p>
             </div>
 

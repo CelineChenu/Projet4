@@ -5,6 +5,8 @@ use App\Entity\Command;
 use App\Entity\Tariff;
 use App\Entity\Ticket;
 use App\Form\CommandType;
+use App\Service\PricingService;
+use App\Service\MailingService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -38,6 +40,7 @@ class BilletterieController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
+
             for ($i = 0; $i < $command->getTicketNumber(); $i++) {
                 $command->addTicket(new Ticket());
             }
@@ -51,72 +54,17 @@ class BilletterieController extends AbstractController
     /**
      * @Route("/informations", name="informations")
      */
-    public function informations(Request $request, EntityManagerInterface $manager)
+    public function informations(Request $request, EntityManagerInterface $manager, PricingService $pricingService)
     {
 
         $command = $request->getSession()->get('command');
 
-
-
         $form = $this->createForm(CommandType::class, $command);
         $form->handleRequest($request);
 
-
-
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $total = 0;
-            $tariffs = $manager->getRepository(Tariff::class)->findAll();
-
-            foreach($tariffs as $tariff)
-            {
-                $tariffsArray[$tariff->getConstant()] = $tariff->getValue();
-                $minVal[$tariff->getConstant()] = $tariff->getMinVal();
-                $maxVal[$tariff->getConstant()] = $tariff->getMaxVal();
-            }
-
-            $tickets = $command->getTickets();
-
-            foreach($tickets as $ticket){
-
-                if ($ticket->getDiscountTicket() == false) {
-
-                    $currentDate = new \DateTime();
-                    $age = date_diff($currentDate, $ticket->getBirthDate())->y;
-
-                    switch ($age) {
-                        case ($age >= $minVal['CHILD_PRICE'] && $age < $maxVal['CHILD_PRICE']):
-                            $constant = 'CHILD_PRICE';
-                            break;
-                        case ($age >= $minVal['ADULT_PRICE'] && $age < $maxVal['ADULT_PRICE']):
-                            $constant = 'ADULT_PRICE';
-                            break;
-                        case ($age >= $minVal['SENIOR_PRICE'] && $age < $maxVal['SENIOR_PRICE']):
-                            $constant = 'SENIOR_PRICE';
-                            break;
-                        case ($age >= $minVal['FREE_PRICE'] && $age < $maxVal['FREE_PRICE']):
-                            $constant = 'FREE_PRICE';
-                            break;
-                        default :
-                            $constant = 'ADULT_PRICE';
-                    }
-                } else {
-                    $constant = 'DISCOUNT_PRICE';
-                }
-
-                $value = $tariffsArray[$constant];
-
-                if($ticket->getDayTicket() == false)   $value = $value/2;
-
-                $ticket->setPrice($value);
-                $ticket->setType($constant);
-
-                $total = $total + $value;
-            }
-
-            $command->setTotal($total);
-            $manager->persist($command);
-            $manager->flush();
+            $command = $pricingService->calculTotal($command);
             return $this->redirectToRoute('recap', ["id"=>$command->getId()]);
         }
 
@@ -135,7 +83,7 @@ class BilletterieController extends AbstractController
     /**
      * @Route("/paiement", name="paiement")
      */
-    public function payment(Request $request, EntityManagerInterface $manager){
+    public function payment(Request $request, EntityManagerInterface $manager, MailingService $mailingService){
 
         $command = $request->getSession()->get('command');
         $total = $command->getTotal();
@@ -157,18 +105,8 @@ class BilletterieController extends AbstractController
         $manager->persist($command);
         $manager->flush();
 
-        $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
-            ->setUsername(MailLog::EMAIL)
-            ->setPassword(MailLog::PASSWORD)
-        ;
-        $mailer = new \Swift_Mailer($transport);
-        $message = (new \Swift_Message('Billetterie du Louvre'))
-            ->setFrom(array('celine.chenu1@gmail.com' => 'Musée du Louvre'))
-            ->setTo($command->getEmail())
-            ->setBody(
-                $this->renderView('mail.html.twig', array('command' => $command)), 'text/html')
-        ;
-        $result = $mailer->send($message);
+        $mailingService->sendMail($command);
+
         return $this->redirectToRoute('validation');
 
     }

@@ -39,7 +39,7 @@
                                     <td><div class="champ"> {{ "Nom"|trans}} : </div>{{ ticket.lastName }}</td>
                                     <td><div class="champ">{{ "Prénom"|trans}} : </div>{{ ticket.firstName }}</td>
                                     <td><div class="champ">{{ "Né(e) le"|trans}} </div>{{ ticket.birthDate|date('d/m/Y')}}</td>
-                                    <td><div class="champ">{{ "Type de ticket"|trans}} : </div>{{ ticket.type }}</td>
+                                    <td><div class="champ">{{ "Type de ticket"|trans}} : </div>{{ ticket.type|trans }}</td>
                                     <td><div class="champ">{{ "Prix"|trans}} </div>{{ ticket.price}}</td>
 
                                     <td id="right"><div class="champ">{{ "Montant"|trans}} : </div>{{ ticket.price }} €</td>

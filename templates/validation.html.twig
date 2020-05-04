@@ -27,9 +27,9 @@
                         {% for ticket in command.tickets %}
                     <hr />
                     <p id="titreTicket">Ticket {{ loop.index }}</p>
-                    <p>{{ ticket.firstName }},
+                    <p>{{ ticket.firstName }}
                         {{ ticket.lastName }}</p>
-                    <p>{{ "Type de billet :"|trans }}{{ ticket.type }}</p>
+                    <p>{{ "Type de billet :"|trans }}{{ ticket.type|trans }}</p>
                         {{ "Prix :"|trans }} ({{ ticket.price }} euros)
                         {% endfor %}
                     </p>

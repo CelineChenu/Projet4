@@ -4,9 +4,13 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Validator\Constrains\VisitNumber;
+use App\Validator\Constrains as MyValidator;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @VisitNumber()
  * @ORM\Entity(repositoryClass="App\Repository\CommandRepository")
  */
 class Command
@@ -20,10 +24,14 @@ class Command
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank
+     * @MyValidator\ClosedDay
+     * @MyValidator\VisitNumber
      */
     private $visitDay;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $email;
