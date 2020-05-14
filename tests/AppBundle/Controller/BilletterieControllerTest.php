@@ -15,8 +15,4 @@ class BilletterieControllerTest extends WebTestCase
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
 
-    public function testGetConstant(){
-
-    }
-
 }
