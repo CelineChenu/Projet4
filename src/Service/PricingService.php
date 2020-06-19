@@ -2,7 +2,9 @@
 
 namespace App\Service;
 
+use App\Entity\Command;
 use App\Entity\Tariff;
+use App\Repository\TariffRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 class PricingService
@@ -30,8 +32,11 @@ class PricingService
 
     }
 
-    public function getConstant($age){
-        switch ($age) {
+    public function getConstant(int $age){
+        switch (true) {
+            case ($age >= $this->minVal['FREE_PRICE'] && $age < $this->maxVal['FREE_PRICE']):
+                $constant = 'FREE_PRICE';
+                break;
             case ($age >= $this->minVal['CHILD_PRICE'] && $age < $this->maxVal['CHILD_PRICE']):
                 $constant = 'CHILD_PRICE';
                 break;
@@ -41,16 +46,13 @@ class PricingService
             case ($age >= $this->minVal['SENIOR_PRICE'] && $age < $this->maxVal['SENIOR_PRICE']):
                 $constant = 'SENIOR_PRICE';
                 break;
-            case ($age >= $this->minVal['FREE_PRICE'] && $age < $this->maxVal['FREE_PRICE']):
-                $constant = 'FREE_PRICE';
-                break;
             default :
                 $constant = 'ADULT_PRICE';
         }
         return $constant;
     }
 
-    public function calculTotal($command){
+    public function calculTotal(Command $command){
         $total = 0;
         $tickets = $command->getTickets();
 
@@ -58,8 +60,8 @@ class PricingService
 
             if ($ticket->getDiscountTicket() == false) {
 
-                $currentDate = new \DateTime();
-                $age = date_diff($currentDate, $ticket->getBirthDate())->y;
+                $visitDate = $command->getVisitDay();
+                $age = date_diff($visitDate, $ticket->getBirthDate())->y;
                 $constant = $this->getConstant($age);
 
             } else {

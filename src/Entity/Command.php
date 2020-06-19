@@ -4,13 +4,12 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use App\Validator\Constrains\VisitNumber;
 use App\Validator\Constrains as MyValidator;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @VisitNumber()
+ * @MyValidator\VisitNumber()
  * @ORM\Entity(repositoryClass="App\Repository\CommandRepository")
  */
 class Command
@@ -26,7 +25,6 @@ class Command
      * @ORM\Column(type="date")
      * @Assert\NotBlank
      * @MyValidator\ClosedDay
-     * @MyValidator\VisitNumber
      */
     private $visitDay;
 
@@ -42,7 +40,7 @@ class Command
     private $total;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Ticket", mappedBy="command", orphanRemoval=true, cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Ticket", mappedBy="command", orphanRemoval=true, cascade={"persist","remove"}, fetch="EAGER")
      */
     private $tickets;
 

@@ -5,6 +5,7 @@ namespace App\Service;
 
 
 use App\Controller\MailLog;
+use App\Entity\Command;
 use Doctrine\ORM\EntityManagerInterface;
 use Twig\Environment;
 
@@ -21,6 +22,7 @@ class MailingService
 
     public function sendMail($command)
     {
+
         $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
             ->setUsername(MailLog::EMAIL)
             ->setPassword(MailLog::PASSWORD);

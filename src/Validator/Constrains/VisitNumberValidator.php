@@ -20,9 +20,6 @@ class VisitNumberValidator extends ConstraintValidator
         $commandManager = $this->manager->getRepository(Command::class);
         $commands = $commandManager->findBy(['visitDay' => $value]);
 
-        dd($commands);
-        die();
-
         $totalTickets = 0;
 
         foreach ($commands as $command){

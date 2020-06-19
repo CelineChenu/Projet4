@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\Ticket;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
@@ -20,7 +21,7 @@ class TicketType extends AbstractType
         $year = $currentYear - 20;
 
         $builder->add('firstname');
-        $builder->add('lastname');
+        $builder->add('lastname', TextType::class, array('required'=> true));
         $builder->add('birthdate', BirthdayType::class, array(
             'format' =>'dd/M/yyyy',
             'widget' => 'choice',

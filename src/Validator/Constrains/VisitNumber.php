@@ -12,4 +12,9 @@ use Symfony\Component\Validator\Constraint;
 class VisitNumber extends Constraint
 {
     public $message = "Il y a trop de visiteurs à cette date, merci de sélectionner une autre date pour votre visite.";
+
+    public function getTargets()
+    {
+        return self::CLASS_CONSTRAINT;
+    }
 }

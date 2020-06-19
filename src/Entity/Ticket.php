@@ -52,13 +52,7 @@ class Ticket
     private $country;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $commandId;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Command", inversedBy="tickets")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $command;
 

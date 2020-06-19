@@ -104,6 +104,7 @@ class BilletterieController extends AbstractController
         $command->setCode($code);
         $manager->persist($command);
         $manager->flush();
+        $manager->refresh($command);
 
         $mailingService->sendMail($command);
 
